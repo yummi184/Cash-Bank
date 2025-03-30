@@ -1,0 +1,140 @@
+/* Receipt Modal Styles */
+.receipt-modal .modal-content {
+  max-width: 380px;
+  border-radius: var(--border-radius);
+  background-color: white;
+  color: #333;
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px dashed #ccc;
+}
+
+.receipt-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.receipt-logo i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.receipt-logo h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.receipt-body {
+  padding: 1.5rem;
+}
+
+.receipt-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.success-icon {
+  font-size: 3rem;
+  color: var(--success-color);
+  margin-bottom: 0.5rem;
+}
+
+.receipt-status h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.receipt-details {
+  background-color: #f9f9f9;
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.receipt-row:last-child {
+  margin-bottom: 0;
+}
+
+.receipt-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.receipt-value {
+  font-weight: 600;
+  text-align: right;
+  word-break: break-word;
+  max-width: 60%;
+}
+
+.receipt-divider {
+  height: 1px;
+  background: repeating-linear-gradient(to right, #ccc, #ccc 5px, transparent 5px, transparent 10px);
+  margin: 1rem 0;
+}
+
+.receipt-footer {
+  text-align: center;
+}
+
+.receipt-footer p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+#downloadReceiptBtn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+#downloadReceiptBtn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Print styles for receipt */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .receipt-modal,
+  .receipt-modal * {
+    visibility: visible;
+  }
+  .receipt-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .close-modal,
+  #downloadReceiptBtn {
+    display: none;
+  }
+}
+

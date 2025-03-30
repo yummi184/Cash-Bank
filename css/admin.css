@@ -1,0 +1,181 @@
+/* Admin specific styles */
+.admin-container {
+  min-height: 100vh;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.admin-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.admin-balance-card {
+  background: linear-gradient(135deg, #6c5ce7, #8e44ad);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.fund-user-card {
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.fund-user-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.admin-tabs {
+  margin-top: 2rem;
+}
+
+.admin-tabs .tabs {
+  margin-bottom: 1.5rem;
+}
+
+.search-container {
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-item {
+  background-color: var(--card-color);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.user-balance {
+  font-weight: 600;
+}
+
+.user-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  margin-top: 0.25rem;
+}
+
+.status-active {
+  background-color: rgba(0, 184, 148, 0.2);
+  color: var(--success-color);
+}
+
+.status-inactive {
+  background-color: rgba(214, 48, 49, 0.2);
+  color: var(--danger-color);
+}
+
+.admin-transactions .transaction-item {
+  flex-wrap: wrap;
+}
+
+.transaction-type {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(108, 92, 231, 0.2);
+  color: var(--primary-color);
+  text-transform: capitalize;
+  margin-top: 0.25rem;
+}
+
+.transaction-parties {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--input-bg);
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.user-action-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.user-action-btn.delete {
+  background-color: rgba(214, 48, 49, 0.2);
+  color: var(--danger-color);
+}
+
+.user-action-btn.delete:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.user-action-btn.edit {
+  background-color: rgba(253, 203, 110, 0.2);
+  color: var(--warning-color);
+}
+
+.user-action-btn.edit:hover {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.user-action-btn.view {
+  background-color: rgba(0, 184, 148, 0.2);
+  color: var(--success-color);
+}
+
+.user-action-btn.view:hover {
+  background-color: var(--success-color);
+  color: white;
+}
+
