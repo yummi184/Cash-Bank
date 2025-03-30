@@ -1,0 +1,12 @@
+[
+  {
+    "id": "98a6db2c-3071-495d-9408-274ef9a8ce61",
+    "name": "CBL SUPPORT",
+    "email": "cbl@cblbankgmail.com",
+    "password": "$2a$10$ALhsOPPjYmQQIXgKDxSG0.NCXD3SnJxJ8pe4FpA4GEtgHPhJxRiF.",
+    "balance": 1e+22,
+    "isAdmin": true,
+    "status": "active",
+    "createdAt": "2025-03-29T23:07:19.687Z"
+  }
+]
