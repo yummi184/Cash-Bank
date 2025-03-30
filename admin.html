@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Wallet - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+      <div class="admin-container">
+          <header class="admin-header">
+              <h1>Admin Dashboard</h1>
+              <button id="logoutBtn" class="btn-icon">
+                  <i class="fas fa-sign-out-alt"></i>
+              </button>
+          </header>
+
+          <div class="admin-balance-card">
+              <div class="balance-header">
+                  <h3>Admin Balance</h3>
+                  <div class="currency">USD</div>
+              </div>
+              <div class="balance-amount">$5,000,000,000.00</div>
+          </div>
+
+          <div class="fund-user-card">
+              <h3>Fund User</h3>
+              <form id="fundUserForm">
+                  <div class="form-group">
+                      <label for="userEmail">User Email</label>
+                      <div class="input-with-icon">
+                          <i class="fas fa-envelope"></i>
+                          <input type="email" id="userEmail" placeholder="Enter user email" required>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="fundAmount">Amount (USD)</label>
+                      <div class="input-with-icon">
+                          <i class="fas fa-dollar-sign"></i>
+                          <input type="number" id="fundAmount" min="0.01" step="0.01" placeholder="0.00" required>
+                      </div>
+                  </div>
+                  
+                  <div class="form-error" id="fundError"></div>
+                  
+                  <button type="submit" class="btn btn-primary btn-block">
+                      <i class="fas fa-paper-plane"></i> Fund User
+                  </button>
+              </form>
+          </div>
+
+          <div class="admin-tabs">
+              <div class="tabs">
+                  <button class="tab-btn active" data-tab="users">Users</button>
+                  <button class="tab-btn" data-tab="transactions">Transactions</button>
+              </div>
+              
+              <div class="tab-content active" id="users-tab">
+                  <div class="search-container">
+                      <div class="input-with-icon search-input">
+                          <i class="fas fa-search"></i>
+                          <input type="search" id="userSearch" placeholder="Search users...">
+                      </div>
+                  </div>
+                  
+                  <div class="users-list" id="usersList">
+                      <!-- Users will be loaded here -->
+                      <div class="loading-spinner" id="usersLoading">
+                          <i class="fas fa-spinner fa-spin"></i>
+                      </div>
+                  </div>
+                  
+                  <div id="noUsers" class="no-data hidden">
+                      <p>No users found</p>
+                  </div>
+              </div>
+              
+              <div class="tab-content" id="transactions-tab">
+                  <div class="search-container">
+                      <div class="input-with-icon search-input">
+                          <i class="fas fa-search"></i>
+                          <input type="search" id="transactionSearch" placeholder="Search transactions...">
+                      </div>
+                  </div>
+                  
+                  <div class="transactions-list admin-transactions" id="adminTransactionsList">
+                      <!-- Transactions will be loaded here -->
+                      <div class="loading-spinner" id="adminTransactionsLoading">
+                          <i class="fas fa-spinner fa-spin"></i>
+                      </div>
+                  </div>
+                  
+                  <div id="noAdminTransactions" class="no-data hidden">
+                      <p>No transactions found</p>
+                  </div>
+              </div>
+          </div>
+
+          <nav class="bottom-nav">
+              <a href="admin.html" class="nav-item active">
+                  <i class="fas fa-home"></i>
+                  <span>Home</span>
+              </a>
+              <a href="#" class="nav-item" id="adminFundBtn">
+                  <i class="fas fa-dollar-sign"></i>
+                  <span>Fund</span>
+              </a>
+              <a href="#" class="nav-item" id="adminTransactionsBtn">
+                  <i class="fas fa-play"></i>
+                  <span>Activity</span>
+              </a>
+              <a href="#" class="nav-item" id="adminUsersBtn">
+                  <i class="fas fa-user"></i>
+                  <span>Users</span>
+              </a>
+          </nav>
+      </div>
+  </div>
+
+  <!-- User Edit Modal -->
+  <div class="modal" id="userEditModal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Edit User</h3>
+              <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <form id="editUserForm">
+                  <input type="hidden" id="editUserId">
+                  <div class="form-group">
+                      <label for="editUserName">Name</label>
+                      <div class="input-with-icon">
+                          <i class="fas fa-user"></i>
+                          <input type="text" id="editUserName" required>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="editUserEmail">Email</label>
+                      <div class="input-with-icon">
+                          <i class="fas fa-envelope"></i>
+                          <input type="email" id="editUserEmail" required>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="editUserStatus">Status</label>
+                      <div class="select-wrapper">
+                          <select id="editUserStatus" required>
+                              <option value="active">Active</option>
+                              <option value="inactive">Inactive</option>
+                          </select>
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                  </div>
+                  <div class="form-error" id="editUserError"></div>
+                  <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
+

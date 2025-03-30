@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Wallet - Transactions</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+      <div class="dashboard-container">
+          <header class="page-header">
+              <h1>Transactions</h1>
+              <div class="search-container">
+                  <div class="input-with-icon search-input">
+                      <i class="fas fa-search"></i>
+                      <input type="search" id="transactionSearch" placeholder="Search transactions...">
+                  </div>
+              </div>
+          </header>
+
+          <div class="transactions-section full-page">
+              <div class="section-header">
+                  <div class="tabs">
+                      <button class="tab-btn active" data-tab="all">All</button>
+                      <button class="tab-btn" data-tab="sent">Sent</button>
+                      <button class="tab-btn" data-tab="received">Received</button>
+                  </div>
+              </div>
+              
+              <div class="transactions-list" id="transactionsList">
+                  <!-- Transactions will be loaded here -->
+                  <div class="loading-spinner" id="transactionsLoading">
+                      <i class="fas fa-spinner fa-spin"></i>
+                  </div>
+              </div>
+              
+              <div id="noTransactions" class="no-data hidden">
+                  <p>No transactions found</p>
+                class="no-data hidden">
+                  <p>No transactions found</p>
+              </div>
+          </div>
+
+          <nav class="bottom-nav">
+              <a href="dashboard.html" class="nav-item">
+                  <i class="fas fa-home"></i>
+                  <span>Home</span>
+              </a>
+              <a href="fund.html" class="nav-item">
+                  <i class="fas fa-dollar-sign"></i>
+                  <span>Fund</span>
+              </a>
+              <a href="transactions.html" class="nav-item active">
+                  <i class="fas fa-play"></i>
+                  <span>Activity</span>
+              </a>
+              <a href="profile.html" class="nav-item">
+                  <i class="fas fa-user"></i>
+                  <span>Profile</span>
+              </a>
+          </nav>
+      </div>
+  </div>
+
+  <script src="js/transactions.js"></script>
+</body>
+</html>
+

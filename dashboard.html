@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Wallet - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+      <div class="dashboard-container">
+          <header class="dashboard-header">
+              <div class="user-info">
+                  <div class="avatar" id="userAvatar">
+                      <span id="userInitial"></span>
+                  </div>
+                  <div class="user-greeting">
+                      <p>Welcome back,</p>
+                      <h2 id="userName">User</h2>
+                  </div>
+              </div>
+              <button id="logoutBtn" class="btn-icon">
+                  <i class="fas fa-sign-out-alt"></i>
+              </button>
+          </header>
+
+          <div class="balance-card">
+              <div class="balance-header">
+                  <h3>Total Balance</h3>
+                  <div class="currency">USD</div>
+              </div>
+              <div class="balance-amount" id="balanceAmount">$0.00</div>
+              <div class="action-buttons">
+                  <a href="send.html" class="action-button">
+                      <div class="action-icon">
+                          <i class="fas fa-paper-plane"></i>
+                      </div>
+                      <span>Send</span>
+                  </a>
+                  <a href="#" class="action-button">
+                      <div class="action-icon">
+                          <i class="fas fa-download"></i>
+                      </div>
+                      <span>Deposit</span>
+                  </a>
+                  <a href="withdraw.html" class="action-button">
+                      <div class="action-icon">
+                          <i class="fas fa-upload"></i>
+                      </div>
+                      <span>Withdraw</span>
+                  </a>
+              </div>
+          </div>
+
+          <div class="bitcoin-card">
+              <div class="bitcoin-header">
+                  <h3>Bitcoin Wallet</h3>
+                  <div class="bitcoin-icon">
+                      <i class="fab fa-bitcoin"></i>
+                  </div>
+              </div>
+              <div class="bitcoin-balance" id="bitcoinBalance">$0.00</div>
+              <div class="bitcoin-actions">
+                  <button id="transferToBtcBtn" class="btn btn-outline btn-sm">
+                      <i class="fas fa-exchange-alt"></i> Transfer
+                  </button>
+                  <button id="fundFromBtcBtn" class="btn btn-outline btn-sm">
+                      <i class="fas fa-paper-plane"></i> Fund User
+                  </button>
+              </div>
+          </div>
+
+          <div class="features-section">
+              <h3 class="section-title">Features</h3>
+              <div class="features-grid">
+                  <div class="feature-card" data-feature="paychecks">
+                      <div class="feature-header">
+                          <div class="feature-icon paychecks">
+                              <i class="fas fa-arrow-down"></i>
+                          </div>
+                          <div class="feature-arrow">
+                              <i class="fas fa-chevron-right"></i>
+                          </div>
+                      </div>
+                      <div class="feature-title">Paychecks</div>
+                      <div class="feature-value"></div>
+                      <div class="feature-subtitle">0.00% today</div>
+                  </div>
+
+                  <div class="feature-card" data-feature="taxes">
+                      <div class="feature-header">
+                          <div class="feature-icon taxes">
+                              <i class="fas fa-file-invoice-dollar"></i>
+                          </div>
+                          <div class="feature-arrow">
+                              <i class="fas fa-chevron-right"></i>
+                          </div>
+                      </div>
+                      <div class="feature-title">Taxes</div>
+                      <div class="feature-value"></div>
+                      <div class="feature-subtitle">Pay $0 to file</div>
+                  </div>
+
+                  <div class="feature-card" data-feature="family">
+                      <div class="feature-header">
+                          <div class="feature-icon family">
+                              <div class="family-avatars">
+                                  <span></span>
+                                  <span></span>
+                              </div>
+                          </div>
+                          <div class="feature-arrow">
+                              <i class="fas fa-chevron-right"></i>
+                          </div>
+                      </div>
+                      <div class="feature-title">Family</div>
+                      <div class="feature-value">me, Alexis</div>
+                      <div class="feature-subtitle">Active today</div>
+                  </div>
+
+                  <div class="feature-card" data-feature="stocks">
+                      <div class="feature-header">
+                          <div class="feature-icon stocks">
+                              <i class="fas fa-chart-line"></i>
+                          </div>
+                          <div class="feature-arrow">
+                              <i class="fas fa-chevron-right"></i>
+                          </div>
+                      </div>
+                      <div class="feature-title">Stocks</div>
+                      <div class="feature-value"></div>
+                      <div class="feature-subtitle">Pay $0 to file</div>
+                  </div>
+
+                  <div class="feature-card" data-feature="savings">
+                      <div class="feature-header">
+                          <div class="feature-icon savings">
+                              <i class="fas fa-piggy-bank"></i>
+                          </div>
+                          <div class="feature-arrow">
+                              <i class="fas fa-chevron-right"></i>
+                          </div>
+                      </div>
+                      <div class="feature-title">Savings</div>
+                      <div class="feature-value"></div>
+                      <div class="feature-subtitle">Up to 4.5% interest</div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="transactions-section">
+              <div class="section-header">
+                  <h3>Recent Transactions</h3>
+                  <a href="transactions.html" class="view-all">View All</a>
+              </div>
+              
+              <div class="transactions-list" id="transactionsList">
+                  <!-- Transactions will be loaded here -->
+                  <div class="loading-spinner" id="transactionsLoading">
+                      <i class="fas fa-spinner fa-spin"></i>
+                  </div>
+              </div>
+              
+              <div id="noTransactions" class="no-data hidden">
+                  <p>No transactions found</p>
+              </div>
+          </div>
+
+          <nav class="bottom-nav">
+              <a href="dashboard.html" class="nav-item active">
+                  <i class="fas fa-home"></i>
+                  <span>Home</span>
+              </a>
+              <a href="fund.html" class="nav-item">
+                  <i class="fas fa-dollar-sign"></i>
+                  <span>Fund</span>
+              </a>
+              <a href="transactions.html" class="nav-item">
+                  <i class="fas fa-play"></i>
+                  <span>Activity</span>
+              </a>
+              <a href="profile.html" class="nav-item">
+                  <i class="fas fa-user"></i>
+                  <span>Profile</span>
+              </a>
+          </nav>
+      </div>
+  </div>
+
+  <!-- Modal for Bitcoin Transfer -->
+  <div class="modal" id="bitcoinTransferModal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Transfer to Bitcoin Wallet</h3>
+              <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <form id="bitcoinTransferForm">
+                  <div class="form-group">
+                      <label for="btcAmount">Amount (USD)</label>
+                      <div class="input-with-icon">
+                          <i class="fas fa-dollar-sign"></i>
+                          <input type="number" id="btcAmount" min="0.01" step="0.01" placeholder="0.00" required>
+                      </div>
+                  </div>
+                  <div class="form-error" id="btcTransferError"></div>
+                  <button type="submit" class="btn btn-primary btn-block">Transfer to Bitcoin Wallet</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal for Fund from Bitcoin -->
+  <div class="modal" id="fundFromBtcModal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Fund User from Bitcoin</h3>
+              <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <form id="fundFromBtcForm">
+                  <div class="form-group">
+                      <label for="btcFundEmail">Recipient Email</label>
+                      <div class="input-with-icon">
+                          <i class="fas fa-envelope"></i>
+                          <input type="email" id="btcFundEmail" placeholder="Enter recipient email" required>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="btcFundAmount">Amount (USD)</label>
+                      <div class="input-with-icon">
+                          <i class="fas fa-dollar-sign"></i>
+                          <input type="number" id="btcFundAmount" min="0.01" step="0.01" placeholder="0.00" required>
+                      </div>
+                  </div>
+                  <div class="form-error" id="btcFundError"></div>
+                  <button type="submit" class="btn btn-primary btn-block">Send from Bitcoin Wallet</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <!-- Coming Soon Modal -->
+  <div class="modal" id="comingSoonModal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Coming Soon</h3>
+              <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <div class="coming-soon-content">
+                  <i class="fas fa-rocket"></i>
+                  <p>This feature is coming soon!</p>
+                  <p class="coming-soon-subtitle">We're working hard to bring you this feature. Stay tuned for updates.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Add Receipt Modal Structure -->
+<div class="overlay" id="receiptOverlay" style="display: none"></div>
+<div class="receipt-modal" id="receiptModal" style="display: none">
+  <div class="receipt-header">
+    <h2>PAYMENT CONFIRMED</h2>
+    <p>SUCCESSFUL✅</p>
+  </div>
+  
+  <div class="receipt-details">
+    <div class="receipt-line">
+      <span>DATE/TIME:</span>
+      <span id="receiptDateTime"></span>
+    </div>
+    <div class="receipt-line">
+      <span>RECIPIENT:</span>
+      <span id="receiptRecipient"></span>
+    </div>
+    <div class="receipt-line">
+      <span>AMOUNT:</span>
+      <span>$<span id="receiptAmount"></span></span>
+    </div>
+    <div class="receipt-line">
+      <span>STATUS:</span>
+      <span style="color: #27ae60;">✓ COMPLETED</span>
+    </div>
+    <div class="receipt-line">
+      <span>NOTE:</span>
+      <span id="receiptNote">-</span>
+    </div>
+  </div>
+
+  <div class="receipt-footer">
+    <button class="print-btn" onclick="window.print()">
+      <i class="fas fa-print"></i> PRINT
+    </button>
+    <p class="receipt-disclaimer">Funds available immediately</p>
+  </div>
+</div>
+
+<!-- Add this CSS in your <head> section -->
+<style>
+/* Receipt Styles */
+/* Updated Receipt Styles */
+.receipt-modal {
+  background: #fff;
+  width: 320px;
+  padding: 25px;
+  font-family: 'Courier New', monospace;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  display: none;
+  color: #000; /* Added base color */
+}
+
+.receipt-header h2 {
+  font-size: 1.4rem;
+  margin: 0 0 5px 0;
+  color: #000; /* Changed to black */
+  font-weight: 700; /* Added bold */
+}
+
+.receipt-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 0.95rem;
+  font-weight: 600; /* Added semi-bold */
+}
+
+.receipt-line span {
+  color: #000 !important; /* Force black color */
+  font-weight: 700; /* Added bold */
+}
+
+.receipt-line span:first-child {
+  font-weight: 700; /* Bold labels */
+}
+
+.receipt-details {
+  margin: 15px 0;
+}
+
+/* Status color remains green but with bold */
+.receipt-line span[style*="color: #27ae60"] {
+  font-weight: 700 !important;
+}
+
+/* TX ID styling */
+.receipt-header p {
+  color: #000;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Note text styling */
+#receiptNote {
+  font-weight: 600;
+  color: #333;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: none;
+}
+
+.receipt-footer {
+  border-top: 2px dashed #ccc;
+  margin-top: 20px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.print-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.receipt-disclaimer {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin: 10px 0 0 0;
+}
+</style>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Wallet - Register</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+      <header class="auth-header">
+          <div class="logo-small">
+              <i class="fas fa-wallet"></i> Digital Wallet
+          </div>
+          <div class="header-links">
+              <a href="#" class="header-link">About</a>
+              <a href="#" class="header-link">Support</a>
+          </div>
+      </header>
+
+      <div class="login-container">
+          <div class="logo-container">
+              <div class="logo">
+                  <i class="fas fa-wallet"></i>
+              </div>
+              <h1>Create Account</h1>
+              <p class="tagline">Join thousands of users today</p>
+          </div>
+          
+          <form id="registerForm" class="auth-form">
+              <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <div class="input-with-icon">
+                      <i class="fas fa-user"></i>
+                      <input type="text" id="name" placeholder="Enter your full name" required>
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <div class="input-with-icon">
+                      <i class="fas fa-envelope"></i>
+                      <input type="email" id="email" placeholder="Enter your email" required>
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <div class="input-with-icon">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" id="password" placeholder="Create a password" required>
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <div class="input-with-icon">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                  </div>
+              </div>
+              
+              <div class="form-error" id="registerError"></div>
+              
+              <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+              
+              <div class="auth-links">
+                  <p>Already have an account? <a href="index.html">Login</a></p>
+              </div>
+              <br>
+          </form>
+      </div>
+      <br>
+      <br>
+
+      <footer class="auth-footer">
+          <div class="footer-links">
+              <a href="#" class="footer-link">Privacy Policy</a>
+              <a href="#" class="footer-link">Terms of Service</a>
+              <a href="#" class="footer-link">Contact Us</a>
+          </div>
+          <div class="copyright">
+              &copy; 2025 Digital Wallet. All rights reserved.
+          </div>
+      </footer>
+  </div>
+  
+  <!-- Begin of Chaport Live Chat code -->
+<script type="text/javascript">
+(function(w,d,v3){
+w.chaportConfig = {
+appId : '67afc612b9a2faf1bc297996'
+};
+
+if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+</script>
+<!-- End of Chaport Live Chat code -->
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
+

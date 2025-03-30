@@ -1,0 +1,57 @@
+<div class="modal receipt-modal" id="receiptModal">
+    <div class="modal-content receipt-content">
+        <div class="receipt-header">
+            <div class="receipt-logo">
+                <i class="fas fa-wallet"></i>
+                <h3>Digital Wallet</h3>
+            </div>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="receipt-body">
+            <div class="receipt-status">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Transaction Successful</h2>
+            </div>
+            <div class="receipt-details">
+                <div class="receipt-row">
+                    <span class="receipt-label">Date & Time:</span>
+                    <span class="receipt-value" id="receiptDateTime"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Transaction ID:</span>
+                    <span class="receipt-value" id="receiptTransactionId"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">From:</span>
+                    <span class="receipt-value" id="receiptFrom"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">To:</span>
+                    <span class="receipt-value" id="receiptTo"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Amount:</span>
+                    <span class="receipt-value" id="receiptAmount"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Type:</span>
+                    <span class="receipt-value" id="receiptType"></span>
+                </div>
+                <div class="receipt-row" id="receiptNoteRow">
+                    <span class="receipt-label">Note:</span>
+                    <span class="receipt-value" id="receiptNote"></span>
+                </div>
+            </div>
+            <div class="receipt-divider"></div>
+            <div class="receipt-footer">
+                <p>Thank you for using Digital Wallet</p>
+                <button class="btn btn-primary" id="downloadReceiptBtn">
+                    <i class="fas fa-download"></i> Download Receipt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
